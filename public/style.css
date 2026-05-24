@@ -1,0 +1,287 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0a1220;
+    font-family:'Rajdhani',sans-serif;
+    color:white;
+    padding:20px;
+}
+
+.dashboard{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    background:#111827;
+    border-radius:20px;
+    border:2px solid #4fd1c5;
+    box-shadow:0 0 40px rgba(79,209,197,0.3);
+    padding:20px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    color:#cbd5e1;
+}
+
+.green{
+    color:#4ade80;
+}
+
+.green-dot{
+    width:10px;
+    height:10px;
+    background:#4ade80;
+    border-radius:50%;
+    display:inline-block;
+    margin-right:8px;
+}
+
+.titlebar{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    background:#1e293b;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.logo-area{
+    font-size:30px;
+}
+
+.titlebar h1{
+    font-size:32px;
+}
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:18px;
+    padding:20px;
+    min-height:320px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-title{
+    color:#ffffff;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.big-number{
+    font-size:52px;
+    font-weight:700;
+    text-align:center;
+}
+
+.gauge-wrapper{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.gauge{
+    width:220px;
+    height:110px;
+    border-top-left-radius:220px;
+    border-top-right-radius:220px;
+    border:12px solid;
+    border-bottom:none;
+    position:relative;
+}
+
+.gauge-temp{
+    border-color:#ff5f1f;
+}
+
+.gauge-rpm{
+    border-color:#facc15;
+}
+
+.needle{
+    width:4px;
+    height:90px;
+    background:white;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform-origin:bottom center;
+    transition:1s;
+}
+
+.status-text{
+    margin-top:25px;
+    text-align:center;
+    font-size:24px;
+}
+
+.orange{
+    color:#fb923c;
+}
+
+.yellow{
+    color:#facc15;
+}
+
+.pwm-box{
+    margin-top:30px;
+}
+
+.bar-bg{
+    width:100%;
+    height:180px;
+    background:#0f172a;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+}
+
+.bar-fill{
+    width:100%;
+    height:0%;
+    position:absolute;
+    bottom:0;
+    background:#fb923c;
+    transition:0.5s;
+}
+
+.duty-text{
+    margin-top:20px;
+    font-size:28px;
+    text-align:center;
+}
+
+.fan-area{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+}
+
+.fan{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:8px solid #4ade80;
+    position:relative;
+    animation:spin 1s linear infinite;
+}
+
+.fan::before,
+.fan::after{
+    content:'';
+    position:absolute;
+    background:#4ade80;
+    border-radius:50%;
+}
+
+.fan::before{
+    width:20px;
+    height:80px;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%);
+}
+
+.fan::after{
+    width:80px;
+    height:20px;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.fan-status,
+.fan-speed{
+    margin-top:20px;
+    font-size:28px;
+}
+
+.graph-container{
+    margin-top:30px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:20px;
+}
+
+.graph-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.graph-header h2{
+    font-size:28px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+button{
+    background:#0f172a;
+    border:1px solid #64748b;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#334155;
+}
+
+canvas{
+    width:100% !important;
+    height:400px !important;
+}
+
+@media(max-width:900px){
+
+    .topbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .titlebar h1{
+        font-size:22px;
+    }
+
+    .graph-header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
