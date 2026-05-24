@@ -1,24 +1,17 @@
 {
-    "name": "esp32-websocket-server",
-    "version": "1.0.0",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "dependencies": {
-        "cors": "^2.8.5",
-        "express": "^4.18.2",
-        "ws": "^8.13.0"
-    },
-    "engines": {
-        "node": ">=16.0.0"
-    },
-    "keywords": [
-        "esp32",
-        "websocket",
-        "nodejs",
-        "express",
-        "telemetria"
-    ]
+  "name": "sistema-monitoramento-motor",
+  "version": "1.0.0",
+  "description": "Sistema ESP32 + Node.js + WebSocket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
 }
-
